@@ -51,6 +51,10 @@ module.exports = (sequelize, DataTypes) => {
   );
   User.associate = function (models) {
     // associations can be defined here
+
+    // user hasmany reviews
+    // user hasmany vehicles
+    // user hasmany spots
   };
   User.prototype.toSafeObject = function () {
     // remember, this cannot be an arrow function

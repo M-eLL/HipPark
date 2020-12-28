@@ -20,6 +20,7 @@ module.exports = {
       sizeId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        references: { model: "Sizes" },
       },
       createdAt: {
         allowNull: false,

@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Location.associate = function(models) {
     // associations can be defined here
+        Location.hasMany(models.Spot, { foreignKey: "locationId" });
   };
   return Location;
 };

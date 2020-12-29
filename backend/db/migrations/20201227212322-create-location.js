@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable("Locations", {
@@ -25,22 +25,24 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       latitude: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       longitude: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.fn("now"),
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.fn("now"),
       },
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Locations');
-  }
+    return queryInterface.dropTable("Locations");
+  },
 };

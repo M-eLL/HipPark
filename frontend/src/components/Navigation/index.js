@@ -23,8 +23,11 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <ul>
+    <ul id="top-nav-bar">
       <li>
+        <h1 id="navbar-logo">Welcome 2 my hell</h1>
+      </li>
+      <li id="session-links">
         <NavLink exact to="/">Home</NavLink>
         {isLoaded && sessionLinks}
       </li>

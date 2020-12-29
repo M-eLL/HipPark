@@ -1,0 +1,8 @@
+#login-form-modal {
+
+  padding: 30px;
+  border-radius: 5px;
+  border: 5px solid rgb(240, 216, 240);
+  background: white;
+  display: table-caption;
+}

@@ -18,43 +18,7 @@ module.exports = {
           price: 10,
           available: true,
           userId: 2,
-          locationId: 17,
-        },
-        {
-          name: "Inner Sunset",
-          description:
-            "Safe garage parking available for day use. I work right upstairs so I can let you in and out when you need. Explore the park, grab some Fresh Squeezed and play darts in the hidden back room at the Shamrock, have some of the best dang chicken wings you'll ever taste at San Tung, order a breakfast special from Howards and get them to deliver it to the Mucky Duck right next door where you can enjoy it with one of their famous bloody marys",
-          price: 25,
-          available: true,
-          userId: 3,
-          locationId: 25,
-        },
-        {
-          name: "Tenderloin",
-          description:
-            "hourly spots inside of an auto shop. Business has been slow so I'm renting out some space for parking. Cheaper and easier than tryin to find parking elsewhere.",
-          price: 5,
-          available: true,
-          userId: 2,
-          locationId: 22,
-        },
-        {
-          name: "outer sunset",
-          description:
-            "monthly parking for a compact car. Just dont pull in all the way so I can fit my vespa at the front of the spot.",
-          price: 5,
-          available: false,
-          userId: 3,
-          locationId: 23,
-        },
-        {
-          name: "20th & Irving",
-          description:
-            "driveway parking. hourly. safe and convenient location. Go hiking through golden gate park for the day. ",
-          price: 5,
-          available: true,
-          userId: 3,
-          locationId: 24,
+          locationId: 1,
         },
         {
           name: "Warfield, Westfield Mall, Union Square",
@@ -63,7 +27,7 @@ module.exports = {
           price: 30,
           available: true,
           userId: 2,
-          locationId: 18,
+          locationId: 2,
         },
         {
           name: "DOGPATCH",
@@ -71,7 +35,15 @@ module.exports = {
           price: 6,
           available: true,
           userId: 2,
-          locationId: 19,
+          locationId: 3,
+        },
+        {
+          name: "Richmond",
+          description: "Garage parking",
+          price: 4,
+          available: true,
+          userId: 2,
+          locationId: 4,
         },
         {
           name: "Lower Pac Heights",
@@ -79,7 +51,43 @@ module.exports = {
           price: 9,
           available: true,
           userId: 2,
-          locationId: 21,
+          locationId: 5,
+        },
+        {
+          name: "Tenderloin",
+          description:
+            "hourly spots inside of an auto shop. Business has been slow so I'm renting out some space for parking. Cheaper and easier than tryin to find parking elsewhere.",
+          price: 5,
+          available: true,
+          userId: 2,
+          locationId: 6,
+        },
+        {
+          name: "outer sunset",
+          description:
+            "monthly parking for a compact car. Just dont pull in all the way so I can fit my vespa at the front of the spot.",
+          price: 5,
+          available: false,
+          userId: 3,
+          locationId: 7,
+        },
+        {
+          name: "20th & Irving",
+          description:
+            "driveway parking. hourly. safe and convenient location. Go hiking through golden gate park for the day. ",
+          price: 5,
+          available: true,
+          userId: 3,
+          locationId: 8,
+        },
+        {
+          name: "Inner Sunset",
+          description:
+            "Safe garage parking available for day use. I work right upstairs so I can let you in and out when you need. Explore the park, grab some Fresh Squeezed and play darts in the hidden back room at the Shamrock, have some of the best dang chicken wings you'll ever taste at San Tung, order a breakfast special from Howards and get them to deliver it to the Mucky Duck right next door where you can enjoy it with one of their famous bloody marys",
+          price: 25,
+          available: true,
+          userId: 3,
+          locationId: 9,
         },
         {
           name: "Civic Center",
@@ -87,7 +95,7 @@ module.exports = {
           price: 13,
           available: true,
           userId: 2,
-          locationId: 26,
+          locationId: 10,
         },
         {
           name: "Chelsea Market",
@@ -95,7 +103,7 @@ module.exports = {
           price: 17,
           available: true,
           userId: 4,
-          locationId: 27,
+          locationId: 11,
         },
         {
           name: "Echo Park",
@@ -103,7 +111,7 @@ module.exports = {
           price: 7,
           available: true,
           userId: 4,
-          locationId: 28,
+          locationId: 12,
         },
         {
           name: "close to university",
@@ -112,7 +120,7 @@ module.exports = {
           price: 3,
           available: true,
           userId: 4,
-          locationId: 29,
+          locationId: 13,
         },
         {
           name: "Cal Anderson Park",
@@ -120,7 +128,7 @@ module.exports = {
           price: 11,
           available: true,
           userId: 4,
-          locationId: 30,
+          locationId: 14,
         },
         {
           name: "Logan Square",
@@ -129,7 +137,7 @@ module.exports = {
           price: 20,
           available: true,
           userId: 4,
-          locationId: 31,
+          locationId: 15,
         },
         {
           name: "French Quarter",
@@ -137,7 +145,7 @@ module.exports = {
           price: 8,
           available: true,
           userId: 4,
-          locationId: 32,
+          locationId: 16,
         },
       ],
       {}

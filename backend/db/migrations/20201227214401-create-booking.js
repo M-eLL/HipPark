@@ -23,11 +23,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: "Users" },
       },
-      vehicleId: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        references: { model: "Vehicles" },
-      },
+      // vehicleId: {
+      //   allowNull: false,
+      //   type: Sequelize.INTEGER,
+      //   references: { model: "Vehicles" },
+      // },
       startDate: {
         allowNull: false,
         type: Sequelize.DATE,

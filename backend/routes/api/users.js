@@ -61,7 +61,7 @@ router.get(
     });
     bookings = await bookings.map(record=> record.toJSON());
     console.log("(!!!!!!!!!!!!!!!!!!!!)", bookings)
-    return res.json(bookings );
+    return res.json(bookings);
     // return res.json({});
   })
 );

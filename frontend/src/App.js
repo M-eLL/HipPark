@@ -29,8 +29,11 @@ function App() {
           <Route exact path="/">
             <Homepage />
           </Route>
-          <Route path="/bookings">
+          <Route exact path="/bookings">
             <Booking />
+          </Route>
+          <Route path="/bookings/:bookingId">
+            <Homepage />
           </Route>
         </Switch>
       )}

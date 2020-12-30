@@ -59,8 +59,8 @@ router.get(
     let bookings = await Booking.findAll({
       where: { userId: user.id },
     });
-    bookings = await bookings.map(record=> record.toJSON());
-    console.log("(!!!!!!!!!!!!!!!!!!!!)", bookings)
+    bookings = await bookings.map((record) => record.toJSON());
+    console.log("(!!!!!!!!!!!!!!!!!!!!)", bookings);
     return res.json(bookings);
     // return res.json({});
   })

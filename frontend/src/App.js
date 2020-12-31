@@ -28,7 +28,7 @@ function App() {
             <SignupFormPage />
           </Route>
           <Route exact path="/">
-            <Homepage />
+            <Booking />
           </Route>
           <Route exact path="/bookings">
             <Booking />

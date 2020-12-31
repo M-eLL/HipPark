@@ -1,5 +1,5 @@
 import "./index.css";
-import picture from "./logo.png";
+// import picture from "./logo.png";
 
 import { useSelector } from "react-redux";
 
@@ -16,7 +16,9 @@ const Home = () => {
         <h1>WElcome!</h1>
       </div> */}
       {loggedInUser && (
-        <h3>welcome {loggedInUser.username}, let's find some parking!</h3>
+        <div>
+          <h3>welcome {loggedInUser.username}, let's find some parking!</h3>
+        </div>
       )}
     </div>
   );

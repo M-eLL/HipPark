@@ -9,27 +9,39 @@ const Spot = () => {
   useEffect(() => {
     dispatch(spot());
   }, []);
+
   const userSpots = useSelector((state) => state.spot);
   console.log(userSpots);
+
+  const loggedInUser = useSelector((state) => {
+    console.log(state);
+    return state.session.user;
+  });
 
   // const {spotId}= useParams()
   // const indSpot = userSpots.find(indSpot=>indSpot.id === spotId)
 
   return (
     <div className="spots">
-      <h1>SPOTSSSSSSS</h1>
       <div>
-        {userSpots.map((spot) => (
-          <div key={spot.id}>
-            {/* <Link to={`/spots/${spot.id}`}>{spot.name}</Link> */}
-            <h3>{spot.name}</h3>
-            <img className="spot-image" src={spot.imageLink} />
-            <p>{spot.description}</p>
+        {loggedInUser && (
+          <div>
+            <h1>Hey {loggedInUser.username}, let's find some spots!</h1>
+            
           </div>
-        ))}
+        )}
       </div>
+      {userSpots.map((spot) => (
+        <div className= "spot-container" key={spot.id}>
+          {/* <Link to={`/spots/${spot.id}`}>{spot.name}</Link> */}
+          <h3>{spot.name}</h3>
+          <p>{spot.description}</p>
+          <img className="spot-image" src={spot.imageLink} />
+        </div>
+      ))}
     </div>
   );
 };
 
 export default Spot;
+

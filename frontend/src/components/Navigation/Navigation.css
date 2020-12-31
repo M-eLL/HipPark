@@ -1,6 +1,7 @@
 .profile-dropdown {
   position: relative;
   border: 3px solid rgb(134, 250, 159);
+  border-radius: 30px;
   width: 200px;
   padding: 10px;
   background: white;
@@ -9,7 +10,6 @@
 }
 #top-nav-bar {
   background: rgb(134, 250, 159);
-  /* background: rgba(121, 100, 122, 0.685); */
   margin: 0;
   height: 40px;
   display: flex;

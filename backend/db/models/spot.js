@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     "Spot",
     {
       name: DataTypes.STRING,
+      imageLink: DataTypes.STRING,
       description: DataTypes.TEXT,
       price: DataTypes.INTEGER,
       available: DataTypes.BOOLEAN,

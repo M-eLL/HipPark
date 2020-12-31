@@ -11,14 +11,17 @@ const router = express.Router();
 router.get(
   "/",
   asyncHandler(async (req, res) => {
-    res.json();
+    console.log(req.url);
+    res.json({ message: "Hi" });
   })
 );
 
 router.post(
   "/",
   requireAuth,
-  asyncHandler(async (req, res) => {})
+  asyncHandler(async (req, res) => {
+
+  })
 );
 
 module.exports = router;

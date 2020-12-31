@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Homepage from "./components/Home";
 import Booking from "./components/Booking";
+import Spot from "./components/Spot";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ function App() {
             <Booking />
           </Route>
           <Route path="/bookings/:bookingId">
-            <Homepage />
+            <Spot />
           </Route>
         </Switch>
       )}

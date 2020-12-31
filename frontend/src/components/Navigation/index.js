@@ -31,7 +31,7 @@ function Navigation({ isLoaded }) {
   return (
     <ul id="top-nav-bar">
       <li>
-        <h1 id="navbar-logo">Welcome 2 my hell</h1>
+        <h1 id="navbar-logo">Welcome</h1>
       </li>
       <li id="session-links">
         <NavLink exact to="/">

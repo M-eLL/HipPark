@@ -24,3 +24,7 @@ li a.active {
   color: white;
   background-color: black;
 }
+
+.spot-image {
+  width: 300px;
+}

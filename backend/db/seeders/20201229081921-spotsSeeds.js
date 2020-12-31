@@ -19,6 +19,8 @@ module.exports = {
           available: true,
           userId: 2,
           locationId: 1,
+          imageLink:
+            "https://brokeassstuart.com/wp-content/pictsnShit/2014/04/dolores-park.jpg",
         },
         {
           name: "Warfield, Westfield Mall, Union Square",
@@ -28,6 +30,8 @@ module.exports = {
           available: true,
           userId: 2,
           locationId: 2,
+          imageLink:
+            "https://rtxevent.com/wp-content/uploads/TheVenueReport-TheWarfield-01.jpg",
         },
         {
           name: "DOGPATCH",
@@ -36,14 +40,18 @@ module.exports = {
           available: true,
           userId: 2,
           locationId: 3,
+          imageLink:
+            "https://www.we-heart.com/upload-images/smokestacksanfrancisco11.jpg",
         },
         {
-          name: "Richmond",
+          name: "Presidio",
           description: "Garage parking",
           price: 4,
           available: true,
           userId: 2,
           locationId: 4,
+          imageLink:
+            "https://californiathroughmylens.com/wp-content/uploads/2012/12/Palace-of-Fine-Arts-11.jpg",
         },
         {
           name: "Lower Pac Heights",
@@ -52,6 +60,8 @@ module.exports = {
           available: true,
           userId: 2,
           locationId: 5,
+          imageLink:
+            "https://lh3.googleusercontent.com/proxy/D5Mc8GZ73taEc-8ZKH1n42IPprzRUYzBpGRjrjjKrXNuPWe2NV7WJTqlUkk_OjhuvcuuIg51v_1f5d0puE2Y9imnWVrRUNlUysx7ZDqK2N5Bip9WepvvZUy3IKG08Q",
         },
         {
           name: "Tenderloin",
@@ -61,24 +71,30 @@ module.exports = {
           available: true,
           userId: 2,
           locationId: 6,
+          imageLink:
+            "https://s.hdnux.com/photos/75/05/30/16012805/5/rawImage.jpg",
         },
         {
-          name: "outer sunset",
+          name: "Ocean Beach",
           description:
             "monthly parking for a compact car. Just dont pull in all the way so I can fit my vespa at the front of the spot.",
           price: 5,
           available: false,
           userId: 3,
           locationId: 7,
+          imageLink:
+            "https://i.pinimg.com/originals/83/00/3c/83003c7df32d24099d95a6f5d5924ce6.jpg",
         },
         {
-          name: "20th & Irving",
+          name: "Stow Lake",
           description:
             "driveway parking. hourly. safe and convenient location. Go hiking through golden gate park for the day. ",
           price: 5,
           available: true,
           userId: 3,
           locationId: 8,
+          imageLink:
+            "https://www.marinmommies.com/sites/default/files/stories/stow-lake-1.jpg",
         },
         {
           name: "Inner Sunset",
@@ -88,6 +104,8 @@ module.exports = {
           available: true,
           userId: 3,
           locationId: 9,
+          imageLink:
+            "https://i.pinimg.com/originals/c2/89/60/c2896034fcf1491bccd5f1c3faf14bda.jpg",
         },
         {
           name: "Civic Center",
@@ -96,6 +114,8 @@ module.exports = {
           available: true,
           userId: 2,
           locationId: 10,
+          imageLink:
+            "https://cdn.funcheap.com/wp-content/uploads/2012/08/Market-Landscape-Small-1024x871.jpg",
         },
         {
           name: "Chelsea Market",
@@ -104,6 +124,7 @@ module.exports = {
           available: true,
           userId: 4,
           locationId: 11,
+          imageLink: "https://media.timeout.com/images/105683484/image.jpg",
         },
         {
           name: "Echo Park",
@@ -112,6 +133,8 @@ module.exports = {
           available: true,
           userId: 4,
           locationId: 12,
+          imageLink:
+            "https://static01.nyt.com/images/2019/11/12/realestate/12LIVING-CA-ECHOPARK-slide-KUMX/12LIVING-CA-ECHOPARK-slide-KUMX-superJumbo.jpg",
         },
         {
           name: "close to university",
@@ -121,14 +144,18 @@ module.exports = {
           available: true,
           userId: 4,
           locationId: 13,
+          imageLink:
+            "https://i.insider.com/590768992f6ae45e008b5897?width=1100&format=jpeg&auto=webp",
         },
         {
-          name: "Cal Anderson Park",
+          name: "Capitol Hill",
           description: "day parking in Capitol Hill",
           price: 11,
           available: true,
           userId: 4,
           locationId: 14,
+          imageLink:
+            "https://www.tripsavvy.com/thmb/5P2BBlvYgYXv0kUSxlbed4VJDKQ=/950x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/6B3A6832-5c6349a2c9e77c0001662817.jpg",
         },
         {
           name: "Logan Square",
@@ -138,6 +165,8 @@ module.exports = {
           available: true,
           userId: 4,
           locationId: 15,
+          imageLink:
+            "https://cdn.vox-cdn.com/uploads/chorus_asset/file/16072066/logansquare_051618_18_76240634.jpg",
         },
         {
           name: "French Quarter",
@@ -146,6 +175,8 @@ module.exports = {
           available: true,
           userId: 4,
           locationId: 16,
+          imageLink:
+            "https://www.tripsavvy.com/thmb/4UoRafyiPOCtLFetynTTQQJS3yc=/2573x2573/smart/filters:no_upscale()/potted-plants-in-balcony-of-building-at-french-quarter-629129963-591da6b53df78cf5fa28a048.jpg",
         },
       ],
       {}

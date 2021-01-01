@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { spot } from "../../store/spot";
 import { bookings } from "../../store/bookings";
 import { Link, Route, useParams } from "react-router-dom";
 
@@ -12,8 +13,9 @@ const Booking = () => {
   });
 
   useEffect(() => {
+    dispatch(spot());
     dispatch(bookings(1));
-  }, []);
+  }, [dispatch]);
   const userBookings = useSelector((state) => state.bookings);
   console.log(userBookings);
 

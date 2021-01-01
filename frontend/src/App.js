@@ -24,18 +24,18 @@ function App() {
           {/* <Route path="/login" >
             <LoginFormPage />
           </Route> */}
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
           <Route exact path="/">
             <Booking />
           </Route>
-          <Route exact path="/bookings">
-            <Booking />
+          <Route path="/signup">
+            <SignupFormPage />
           </Route>
-          <Route path="/bookings/:bookingId">
+          <Route path="/spots/:spotId">
             <Spot />
           </Route>
+          {/* <Route exact path="/bookings">
+            <Booking />
+          </Route> */}
         </Switch>
       )}
     </>

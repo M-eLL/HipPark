@@ -9,19 +9,21 @@ const { User, Booking, Spot } = require("../../db/models");
 const router = express.Router();
 
 router.get(
-  "/",
+  "/:id",
   asyncHandler(async (req, res) => {
-    console.log(req.url);
-    res.json({ message: "Hi" });
+    const id = req.params.id;
+    const booking = await Booking.findByPk(id);
+    
+    res.json(booking);
   })
 );
 
-router.post(
-  "/",
-  requireAuth,
-  asyncHandler(async (req, res) => {
+// router.post(
+//   "/",
+//   requireAuth,
+//   asyncHandler(async (req, res) => {
 
-  })
-);
+//   })
+// );
 
 module.exports = router;

@@ -20,14 +20,17 @@ const Booking = () => {
   return (
     <div className="bookings">
       <h1>HOME PAGE</h1>
-      <p>---------- below this line will only be visible to logged in peeps------------</p>
+      <p>
+        ---------- below this line will only be visible to logged in
+        peeps------------
+      </p>
       <div>
         {loggedInUser && (
           <div>
             <h3>welcome {loggedInUser.username}, here are your bookings!</h3>
             {userBookings.map((booking) => (
               <div key={booking.id}>
-                <Link to={`/bookings/${booking.id}`}>{booking.spotId}</Link>
+                <Link to={`/spots/${booking.spotId}`}>{booking.spotId}</Link>
               </div>
             ))}
           </div>

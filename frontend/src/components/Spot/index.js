@@ -1,35 +1,66 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { spot } from "../../store/spot";
-import { Link, Route, useParams } from "react-router-dom";
+import { oneSpot } from "../../store/spots";
+import { Link, useParams } from "react-router-dom";
 
-const Spot = () => {
+const Spots = () => {
   const dispatch = useDispatch();
+  const { spotId } = useParams();
 
   useEffect(() => {
-    dispatch(spot());
-  }, []);
-  const userSpots = useSelector((state) => state.spot);
-  console.log(userSpots);
+    dispatch(oneSpot());
+  }, [dispatch]);
 
-  // const {spotId}= useParams()
-  // const indSpot = userSpots.find(indSpot=>indSpot.id === spotId)
+  const userSpots = useSelector((state) => state.spots.userSpots);
+  console.log("USER SPOTS:", userSpots);
+
+  const loggedInUser = useSelector((state) => {
+    console.log(state);
+    return state.session.user;
+  });
+
+  // useSelector((state) =>
+  //   state.spot.find((ele) => {
+  //     return ele.id == spotId;
+  //   })
+  // ),
+
+  // inefficient - should be using a single resource route
 
   return (
     <div className="spots">
-      <h1>SPOTSSSSSSS</h1>
       <div>
-        {userSpots.map((spot) => (
-          <div key={spot.id}>
-            {/* <Link to={`/spots/${spot.id}`}>{spot.name}</Link> */}
-            <h3>{spot.name}</h3>
-            <img className="spot-image" src={spot.imageLink} />
-            <p>{spot.description}</p>
+        {userSpots && (
+          <div>
+            <h1>More information about {userSpots[spotId].name}:</h1>
+            {userSpots && (
+              <div>
+                <img className="spot-image" src={userSpots[spotId].imageLink} />
+                <p>${userSpots[spotId].price}/day</p>
+                <p>{userSpots[spotId].description}</p>
+              </div>
+            )}
           </div>
-        ))}
+        )}
       </div>
+      {/* until userspots exists, dont render */}
+      {/* {userSpots && (
+        <div>
+          <h3>{userSpots[spotId].name}</h3>
+        </div>
+      )} */}
+      {/* {userSpots &&
+        userSpots.map((spot) => (
+          <Link to={`/spots/${spot.id}`}>
+            <div className="spot-container" key={spot.id}>
+              <h2>{spot.name}</h2>
+              <p>{spot.description}</p>
+              <img className="spot-image" src={spot.imageLink} />
+            </div>
+          </Link>
+        ))} */}
     </div>
   );
 };
 
-export default Spot;
+export default Spots;

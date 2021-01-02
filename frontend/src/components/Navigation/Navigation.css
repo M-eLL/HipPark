@@ -1,16 +1,23 @@
 .profile-dropdown {
-  position: absolute;
+  position: relative;
+  /* border: 3px solid rgb(134, 250, 159);
+  border-radius: 30px; */
+  /* width: 200px; */
+  /* padding: 10px; */
+  /* background: white; */
+  /* color: black; */
+  list-style: none;
 }
 #top-nav-bar {
-  background: rgba(121, 100, 122, 0.685);
+  background: rgb(134, 250, 159);
   margin: 0;
-  height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   list-style: none;
 }
 
-#session-links {
-    display: flex;
-}
+/* #session-links {
+  display: flex;
+  padding-right: 15px;
+} */

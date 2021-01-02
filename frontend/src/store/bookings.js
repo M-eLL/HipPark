@@ -25,7 +25,6 @@ function reducer(state = initialState, action) {
       newState = [...action.payload];
       return newState;
     }
-
     default:
       return state;
   }

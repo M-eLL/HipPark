@@ -1,6 +1,7 @@
 /* TODO Add site wide styles */
 * {
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 html,
@@ -23,19 +24,29 @@ li a.active {
   color: white;
   background-color: black;
 } */
+#logo {
+  height: 50px;
+  width: 50px;
+}
+
+.navbar-logo {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
 
 .spot-container {
-  background:rgb(240, 240, 240);
+  background: whitesmoke;
   /* border: .5px solid black; */
   padding: 5px;
   width: 315px;
-  height: 470px;
+  height: 300px;
   margin-bottom: 0.5em;
   margin-left: 0.25em;
   margin-right: 0.25em;
   display: inline-grid;
   border-radius: 10px;
-  box-shadow: 1px 1px 1px 0.7px rgba(69, 72, 73, 0.445);
+  box-shadow: 1px 1px 5px 0.7px darkgrey;
 }
 .spot-image {
   width: 300px;

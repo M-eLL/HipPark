@@ -58,6 +58,7 @@ router.get(
     // console.log(userId);
     let bookings = await Booking.findAll({
       where: { userId: user.id },
+      include: [Spot, User]
     });
     bookings = await bookings.map((record) => record.toJSON());
     console.log("(!!!!!!!!!!!!!!!!!!!!)", bookings);
@@ -65,6 +66,10 @@ router.get(
     // return res.json({});
   })
 );
+
+
+
+
 router.get(
   "/:id/spots",
   restoreUser,

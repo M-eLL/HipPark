@@ -42,7 +42,7 @@ const BookingForm = () => {
         />
       </label>
       <label>
-        Select a Color
+        Select a date
         <select onChange={(e) => setColor(e.target.value)} value={color}>
           {COLORS.map((color) => (
             <option key={color} value={color}>

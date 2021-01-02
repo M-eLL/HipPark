@@ -28,7 +28,7 @@ const Booking = () => {
             {userBookings.map((booking) => (
               <div className="user-bookings" key={booking.id}>
                 <Link to={`/spots/${booking.spotId}`}>
-                  <h1>{booking.spotId}</h1>
+                  <h1>{booking.Spot.name}</h1>
                 </Link>
               </div>
             ))}

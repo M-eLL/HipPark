@@ -30,10 +30,10 @@ function Navigation({ isLoaded }) {
 
   return (
     <div id="top-nav-bar">
-      <div className="navbar-logo">
+      <NavLink className="navbar-logo" to="/">
         <img id="logo" src={picture} />
         <h1 id="navbar-logo">HipPark</h1>
-      </div>
+      </NavLink>
 
       <div id="session-links">
         <NavLink exact to="/">

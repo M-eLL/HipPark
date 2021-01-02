@@ -26,8 +26,10 @@ const Booking = () => {
           <div>
             <h3>Hey {loggedInUser.username}, here are your bookings!</h3>
             {userBookings.map((booking) => (
-              <div key={booking.id}>
-                <Link to={`/spots/${booking.spotId}`}>{booking.spotId}</Link>
+              <div className="user-bookings" key={booking.id}>
+                <Link to={`/spots/${booking.spotId}`}>
+                  <h1>{booking.spotId}</h1>
+                </Link>
               </div>
             ))}
           </div>

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { spot } from "../../store/spot";
+import { oneSpot } from "../../store/spots";
 import { bookings } from "../../store/bookings";
 import { Link, Route, useParams } from "react-router-dom";
 
@@ -13,23 +13,18 @@ const Booking = () => {
   });
 
   useEffect(() => {
-    dispatch(spot());
+    dispatch(oneSpot());
     dispatch(bookings(1));
   }, [dispatch]);
   const userBookings = useSelector((state) => state.bookings);
-  console.log(userBookings);
+  // console.log(userBookings);
 
   return (
     <div className="bookings">
-      <h1>HOME PAGE</h1>
-      <p>
-        ---------- below this line will only be visible to logged in
-        peeps------------
-      </p>
       <div>
         {loggedInUser && (
           <div>
-            <h3>welcome {loggedInUser.username}, here are your bookings!</h3>
+            <h3>Hey {loggedInUser.username}, here are your bookings!</h3>
             {userBookings.map((booking) => (
               <div key={booking.id}>
                 <Link to={`/spots/${booking.spotId}`}>{booking.spotId}</Link>

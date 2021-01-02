@@ -25,8 +25,8 @@ li a.active {
 }
 
 .spot-container {
-  background: rgba(194, 222, 241, 0.445);
-  border: .5px solid black;
+  background:rgb(240, 240, 240);
+  /* border: .5px solid black; */
   padding: 5px;
   width: 315px;
   height: 470px;
@@ -35,7 +35,7 @@ li a.active {
   margin-right: 0.25em;
   display: inline-grid;
   border-radius: 10px;
-  box-shadow: 1px 1px 1px 0.3px rgba(194, 222, 241, 0.445);
+  box-shadow: 1px 1px 1px 0.7px rgba(69, 72, 73, 0.445);
 }
 .spot-image {
   width: 300px;

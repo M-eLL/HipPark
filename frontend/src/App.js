@@ -25,10 +25,13 @@ function App() {
             <LoginFormPage />
           </Route> */}
           <Route exact path="/">
-            <Booking />
+            <Homepage />
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route exact path="/bookings">
+            <Booking />
           </Route>
           <Route path="/spots/:spotId">
             <Spot />

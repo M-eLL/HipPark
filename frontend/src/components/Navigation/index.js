@@ -13,6 +13,10 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <ProfileButton user={sessionUser} />
+        <NavLink exact to="/bookings">
+          Bookings
+        </NavLink>
+      
       </>
     );
   } else {

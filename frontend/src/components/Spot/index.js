@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { spot } from "../../store/spot";
+import { oneSpot } from "../../store/spots";
 import { Link, useParams } from "react-router-dom";
 
-const Spot = () => {
+const Spots = () => {
   const dispatch = useDispatch();
   const { spotId } = useParams();
 
   useEffect(() => {
-    dispatch(spot());
+    dispatch(oneSpot());
   }, [dispatch]);
 
-  const userSpots = useSelector((state) => state.spot.userSpots);
+  const userSpots = useSelector((state) => state.spots.userSpots);
+  console.log("USER SPOTS:", userSpots);
 
   const loggedInUser = useSelector((state) => {
     console.log(state);
@@ -31,11 +32,16 @@ const Spot = () => {
       <div>
         {loggedInUser && (
           <div>
-            <h1>Hey {loggedInUser.username}, let's find some spots!</h1>
+            <h1>
+              More information about {" "}
+              {userSpots[spotId].name}:
+            </h1>
             {userSpots && (
-              <div>
-                <h3>{userSpots[spotId].name}</h3>
-              </div>
+              <ul>
+                <li>{userSpots[spotId].name}</li>
+                <li>${userSpots[spotId].price}/day</li>
+                <li>{userSpots[spotId].price}</li>
+              </ul>
             )}
           </div>
         )}
@@ -60,4 +66,4 @@ const Spot = () => {
   );
 };
 
-export default Spot;
+export default Spots;

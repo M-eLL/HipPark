@@ -17,6 +17,16 @@ router.get(
   "/",
   restoreUser,
   asyncHandler(async (req, res) => {
+    let spots = await Spot.findAll();
+    res.json({ spots });
+  })
+);
+
+
+router.get(
+  "/:id",
+  restoreUser,
+  asyncHandler(async (req, res) => {
     let id = await req.params.id;
     let spots = await Spot.findAll();
 
@@ -24,13 +34,6 @@ router.get(
   })
 );
 
-router.get(
-  "/:id",
-  asyncHandler(async (req, res) => {
-    const id = req.params.id;
-    const spot = await Spot.findByPk(id);
-    return res.json({ spot });
-  })
-);
+
 
 module.exports = router;

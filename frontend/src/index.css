@@ -7,7 +7,7 @@ html,
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-
+/* 
 li a {
   margin: 0 20px;
   padding: 5px;
@@ -22,7 +22,7 @@ li a {
 li a.active {
   color: white;
   background-color: black;
-}
+} */
 
 .spot-container {
   background:rgb(240, 240, 240);

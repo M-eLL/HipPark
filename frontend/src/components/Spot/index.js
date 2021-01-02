@@ -30,18 +30,15 @@ const Spots = () => {
   return (
     <div className="spots">
       <div>
-        {loggedInUser && (
+        {userSpots && (
           <div>
-            <h1>
-              More information about {" "}
-              {userSpots[spotId].name}:
-            </h1>
+            <h1>More information about {userSpots[spotId].name}:</h1>
             {userSpots && (
-              <ul>
-                <li>{userSpots[spotId].name}</li>
-                <li>${userSpots[spotId].price}/day</li>
-                <li>{userSpots[spotId].price}</li>
-              </ul>
+              <div>
+                <img className="spot-image" src={userSpots[spotId].imageLink} />
+                <p>${userSpots[spotId].price}/day</p>
+                <p>{userSpots[spotId].description}</p>
+              </div>
             )}
           </div>
         )}

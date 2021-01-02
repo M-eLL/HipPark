@@ -46,12 +46,12 @@ const Home = () => {
       <h1>these are SPOTSSSSSSS</h1>
       <div>
         {userSpots.map((spot) => (
-          <div class="spot-container" key={spot.id}>
+          <Link class="spot-container" key={spot.id} to={`/spots/${spot.id}`}>
             {/* <Link to={`/spots/${spot.id}`}>{spot.name}</Link> */}
             <h3>{spot.name}</h3>
             <img className="spot-image" src={spot.imageLink} />
-            <p>{spot.description}</p>
-          </div>
+            {/* <p>{spot.description}</p> */}
+          </Link>
         ))}
       </div>
     </div>

@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Homepage from "./components/Home";
 import Booking from "./components/Booking";
+import BookingForm from "./components/BookingForm";
 import Spot from "./components/Spot";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           </Route>
           <Route path="/spots/:spotId">
             <Spot />
+            <BookingForm />
           </Route>
           {/* <Route exact path="/bookings">
             <Booking />

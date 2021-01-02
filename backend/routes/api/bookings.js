@@ -13,17 +13,21 @@ router.get(
   asyncHandler(async (req, res) => {
     const id = req.params.id;
     const booking = await Booking.findByPk(id);
-    
+
     res.json(booking);
   })
 );
 
-// router.post(
-//   "/",
-//   requireAuth,
-//   asyncHandler(async (req, res) => {
-
-//   })
-// );
+router.post(
+  "/:booking/id",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    // const user = await User.findByPk(req.body.userId);
+    // const spot = await Spot.findByPk(req.params.spotId);
+    const bookingObj = req.body.booking;
+    const newBooking = await Booking.create(bookingObj);
+    res.json({ newBooking: bookingObj });
+  })
+);
 
 module.exports = router;

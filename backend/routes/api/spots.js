@@ -8,7 +8,7 @@ const {
   requireAuth,
   restoreUser,
 } = require("../../utils/auth");
-const { User, Booking, Spot, SpotType } = require("../../db/models");
+const { User, Booking, Spot, SpotType, Location } = require("../../db/models");
 const { db } = require("../../config");
 
 const router = express.Router();
@@ -22,7 +22,6 @@ router.get(
   })
 );
 
-
 router.get(
   "/:id",
   restoreUser,
@@ -33,7 +32,5 @@ router.get(
     return res.json({ spots });
   })
 );
-
-
 
 module.exports = router;

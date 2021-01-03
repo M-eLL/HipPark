@@ -36,10 +36,19 @@ router.delete(
 );
 
 router.post(
-  "/:booking/id",
+  "/:spotId",
   requireAuth,
   asyncHandler(async (req, res) => {
-    res.json({ newBooking: bookingObj });
+    const spotId = parseInt(req.params.spotId);
+    const userId = parseInt(req.body.userId);
+    const newBooking = await Booking.create({
+      userId,
+      spotId,
+      statusId: 8,
+      startDate: new Date(),
+      endDate: new Date(),
+    });
+    res.json({ newBooking });
   })
 );
 

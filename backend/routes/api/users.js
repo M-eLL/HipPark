@@ -46,41 +46,31 @@ router.post(
   })
 );
 
-// const userId = parseInt(req.session.auth.userId);
-// let bookings = await db.Booking.findByPk(bookingId);
-// bookings = bookings.toJSON();
-
+// get user's bookings
 router.get(
   "/:id/bookings",
   restoreUser,
   asyncHandler(async (req, res) => {
     const user = await req.user.toJSON();
-    // console.log(userId);
     let bookings = await Booking.findAll({
       where: { userId: user.id },
-      include: [Spot, User]
+      include: [Spot, User],
     });
     bookings = await bookings.map((record) => record.toJSON());
-    console.log("(!!!!!!!!!!!!!!!!!!!!)", bookings);
     return res.json(bookings);
-    // return res.json({});
   })
 );
 
-
-
-
+// get user's booked spots
 router.get(
   "/:id/spots",
   restoreUser,
   asyncHandler(async (req, res) => {
-    const userId = req.params.id
-    // console.log(userId);
+    const userId = req.params.id;
     let spots = await Spot.findAll({
-      where: { userId},
+      where: { userId },
     });
     res.json(spots);
-    // return res.json({});
   })
 );
 

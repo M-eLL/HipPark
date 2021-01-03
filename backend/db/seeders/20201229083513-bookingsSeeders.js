@@ -1,5 +1,5 @@
 "use strict";
-const {Spot} = require("../models")
+const { Spot, Status, User } = require("../models");
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -9,78 +9,86 @@ module.exports = {
 
       Example:
       */
-    const spots = await Spot.findAll()
-    console.log(spots[0].id)
+    const spots = await Spot.findAll();
+    const status = await Status.findAll();
+    const user = await User.findAll();
     return queryInterface.bulkInsert(
       "Bookings",
       [
         {
           spotId: spots[0].id,
-          statusId: 2,
-          userId: 1,
+          statusId: status[1].id,
+          userId: user[0].id,
+          startDate: new Date(),
+          endDate: new Date(),
+        },
+        {
+          spotId: spots[0].id,
+          statusId: status[2].id,
+          userId: user[1].id,
           startDate: new Date(),
           endDate: new Date(),
         },
         {
           spotId: spots[1].id,
-          statusId: 1,
-          userId: 1,
+          statusId: status[0].id,
+          userId: user[1].id,
           startDate: new Date(),
           endDate: new Date(),
         },
         {
           spotId: spots[2].id,
-          statusId: 1,
-          userId: 1,
+          statusId: status[0].id,
+          userId: user[1].id,
           startDate: new Date(),
           endDate: new Date(),
         },
         {
           spotId: spots[3].id,
-          statusId: 3,
-          userId: 1,
+          statusId: status[2].id,
+          userId: user[1].id,
           startDate: new Date(),
           endDate: new Date(),
         },
         {
           spotId: spots[4].id,
-          statusId: 2,
-          userId: 1,
+          statusId: status[1].id,
+          userId: user[1].id,
           startDate: new Date(),
           endDate: new Date(),
         },
         {
           spotId: spots[5].id,
-          statusId: 1,
-          userId: 1,
+          statusId: status[0].id,
+          userId: user[1].id,
           startDate: new Date(),
           endDate: new Date(),
         },
         {
           spotId: spots[6].id,
-          statusId: 1,
-          userId: 1,
+          statusId: status[0].id,
+          userId: user[1].id,
           startDate: new Date(),
           endDate: new Date(),
         },
         {
           spotId: spots[7].id,
-          statusId: 1,
-          userId: 1,
+          statusId: status[0].id,
+          userId: user[1].id,
           startDate: new Date(),
           endDate: new Date(),
         },
         {
           spotId: spots[8].id,
-          statusId: 1,
-          userId: 1,
+          statusId: status[0].id,
+          userId: user[1].id,
           startDate: new Date(),
           endDate: new Date(),
         },
         {
           spotId: spots[9].id,
-          statusId: 1,
-          userId: 1,
+          statusId: status[0].id,
+          userId: user[1].id,
           startDate: new Date(),
           endDate: new Date(),
         },

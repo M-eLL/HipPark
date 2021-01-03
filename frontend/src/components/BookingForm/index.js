@@ -1,57 +1,30 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import { oneSpot } from "../../store/spots";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
+import { deleteBookings } from "../../store/bookings";
 
 const BookingForm = () => {
-  const COLORS = ["orange", "yellow", "white", "black", "brown", "gray"];
-
-  const [color, setColor] = useState(COLORS[0]);
-  const [name, setName] = useState("");
+  const history = useHistory();
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.session.user);
+  const { spotId } = useParams();
 
-  //   const { spotId } = useParams();
-
-  useEffect(() => {
-    //     dispatch(oneSpot());
-  }, [dispatch]);
-
-  //   const userSpots = useSelector((state) => state.spots.userSpots);
-  //   console.log("USER SPOTS:", userSpots);
-
-  //   const loggedInUser = useSelector((state) => {
-  //     console.log(state);
-  //     return state.session.user;
-  //   });
-  const onSubmit = (e) => {
-    e.preventDefault();
-    console.log({});
-    // history.push("/");
+  const deleteHandler = () => {
+    console.log(spotId);
+    dispatch(deleteBookings(spotId, user.id));
+    history.push("/bookings");
   };
 
+  // const byeBookings = useSelector((state) => state.bookings.byeBookings);
+
+  // const onSubmit = (e) => {
+  //   e.preventDefault();
+  // };
+
   return (
-    <form className="booking-form" onSubmit={onSubmit}>
-      <h1>booking form</h1>
-      <label>
-        Name
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </label>
-      <label>
-        Select a date
-        <select onChange={(e) => setColor(e.target.value)} value={color}>
-          {COLORS.map((color) => (
-            <option key={color} value={color}>
-              {color}
-            </option>
-          ))}
-        </select>
-      </label>
-      <button type="submit">book the spot</button>
+    <form className="booking-form">
+      <h1>delete booking?</h1>
+      <button onClick={deleteHandler}>delete</button>
     </form>
   );
 };

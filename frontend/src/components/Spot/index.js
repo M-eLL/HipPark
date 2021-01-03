@@ -19,13 +19,7 @@ const Spots = () => {
     return state.session.user;
   });
 
-  // useSelector((state) =>
-  //   state.spot.find((ele) => {
-  //     return ele.id == spotId;
-  //   })
-  // ),
 
-  // inefficient - should be using a single resource route
 
   return (
     <div className="spots">

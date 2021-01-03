@@ -15,14 +15,8 @@ const BookingForm = () => {
     history.push("/bookings");
   };
 
-  // const byeBookings = useSelector((state) => state.bookings.byeBookings);
-
-  // const onSubmit = (e) => {
-  //   e.preventDefault();
-  // };
-
   return (
-    <form className="booking-form">
+    <form className="booking-delete-form">
       <h1>delete booking?</h1>
       <button onClick={deleteHandler}>delete</button>
     </form>

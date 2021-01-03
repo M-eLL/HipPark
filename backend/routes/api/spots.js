@@ -27,7 +27,9 @@ router.get(
   restoreUser,
   asyncHandler(async (req, res) => {
     let id = await req.params.id;
-    let spots = await Spot.findAll();
+    let spots = await Spot.findAll({
+      include: [Location],
+    });
 
     return res.json({ spots });
   })

@@ -8,7 +8,7 @@ const {
   requireAuth,
   restoreUser,
 } = require("../../utils/auth");
-const { User, Booking, Spot } = require("../../db/models");
+const { User, Booking, Spot, Location } = require("../../db/models");
 const { db } = require("../../config");
 
 const router = express.Router();
@@ -54,7 +54,7 @@ router.get(
     const user = await req.user.toJSON();
     let bookings = await Booking.findAll({
       where: { userId: user.id },
-      include: [Spot, User],
+      include: [{ model: Spot, include: [Location] }, User],
     });
     bookings = await bookings.map((record) => record.toJSON());
     return res.json(bookings);

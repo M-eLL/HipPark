@@ -3,6 +3,7 @@ import { fetch } from "./csrf.js";
 const GET_BOOKINGS = "bookings/getBookings";
 const DELETE_BOOKING = "bookings/deleteBooking";
 const ADD_BOOKING = "bookings/addBooking";
+const EDIT_BOOKING = "bookings/editBooking";
 
 const getBookings = (payload) => ({
   type: GET_BOOKINGS,
@@ -16,6 +17,12 @@ const addBooking = (payload) => ({
 const deleteBooking = (payload) => {
   return {
     type: DELETE_BOOKING,
+    payload: payload,
+  };
+};
+const editBooking = (payload) => {
+  return {
+    type: EDIT_BOOKING,
     payload: payload,
   };
 };
@@ -46,6 +53,15 @@ export const addBookings = (spotId, userId) => async (dispatch) => {
   dispatch(addBooking(response.data));
 };
 
+export const editBookings = (spotId, userId) => async (dispatch) => {
+  let response = await fetch(`/api/bookings/${spotId}`, {
+    method: "PUT",
+    body: JSON.stringify({ userId }),
+  });
+
+  dispatch(editBooking(response.data));
+};
+
 const initialState = [];
 
 function reducer(state = initialState, action) {
@@ -63,6 +79,10 @@ function reducer(state = initialState, action) {
       newState = [...state, action.payload];
       return newState;
     }
+    // case EDIT_BOOKING: {
+    //   newState = [...state, action.payload];
+    //   return newState;
+    // }
     default:
       return state;
   }

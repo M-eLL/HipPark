@@ -52,4 +52,22 @@ router.post(
   })
 );
 
+
+router.put(
+  "/:spotId",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const spotId = parseInt(req.params.spotId);
+    const userId = parseInt(req.body.userId);
+    const newBooking = await Booking.create({
+      userId,
+      spotId,
+      statusId: 8,
+      startDate: new Date(),
+      endDate: new Date(),
+    });
+    res.json({ newBooking });
+  })
+);
+
 module.exports = router;

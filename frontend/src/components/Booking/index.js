@@ -8,7 +8,6 @@ const Booking = () => {
   const dispatch = useDispatch();
 
   const loggedInUser = useSelector((state) => {
-    console.log(state);
     return state.session.user;
   });
 
@@ -17,7 +16,7 @@ const Booking = () => {
     dispatch(bookings(1));
   }, [dispatch]);
   const userBookings = useSelector((state) => state.bookings);
-  // console.log(userBookings);
+  console.log(userBookings);
 
   return (
     <div className="bookings">
@@ -28,7 +27,7 @@ const Booking = () => {
             {userBookings.map((booking) => (
               <div className="user-bookings" key={booking.id}>
                 <Link to={`/spots/${booking.spotId}`}>
-                  {booking.Spot && <h1>{booking.Spot.name}</h1>}
+                  {booking.Spot && <h1>{booking.Spot.Location.city}</h1>}
                 </Link>
               </div>
             ))}
@@ -36,16 +35,6 @@ const Booking = () => {
         )}
       </div>
     </div>
-    // <div>
-    //   <NavLink to="/" exact> Home</NavLink>
-    //   {userBookings.map((booking) => {
-    //     return <div>{booking.spotId}</div>;
-    //   })}
-    // </div>
-
-    // <li key={booking.id}>
-    //         <NavLink to={`/users/${user.id}/bookings`}>{booking.spotId}</NavLink>
-    //       </li>
   );
 };
 

@@ -18,15 +18,55 @@ router.get(
   })
 );
 
+router.delete(
+  "/:spotId/:userId",
+  asyncHandler(async (req, res) => {
+    const spotId = parseInt(req.params.spotId);
+    const userId = parseInt(req.params.userId);
+    const booking = await Booking.findOne({
+      where: {
+        spotId,
+        userId,
+      },
+    });
+    const bookingId = booking.id;
+    await booking.destroy();
+    res.json({ bookingId });
+  })
+);
+
 router.post(
-  "/:booking/id",
+  "/:spotId",
   requireAuth,
   asyncHandler(async (req, res) => {
-    // const user = await User.findByPk(req.body.userId);
-    // const spot = await Spot.findByPk(req.params.spotId);
-    const bookingObj = req.body.booking;
-    const newBooking = await Booking.create(bookingObj);
-    res.json({ newBooking: bookingObj });
+    const spotId = parseInt(req.params.spotId);
+    const userId = parseInt(req.body.userId);
+    const newBooking = await Booking.create({
+      userId,
+      spotId,
+      statusId: 8,
+      startDate: new Date(),
+      endDate: new Date(),
+    });
+    res.json({ newBooking });
+  })
+);
+
+
+router.put(
+  "/:spotId",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const spotId = parseInt(req.params.spotId);
+    const userId = parseInt(req.body.userId);
+    const newBooking = await Booking.create({
+      userId,
+      spotId,
+      statusId: 8,
+      startDate: new Date(),
+      endDate: new Date(),
+    });
+    res.json({ newBooking });
   })
 );
 

@@ -12,20 +12,10 @@ const Spots = () => {
   }, [dispatch]);
 
   const userSpots = useSelector((state) => state.spots.userSpots);
-  console.log("USER SPOTS:", userSpots);
 
   const loggedInUser = useSelector((state) => {
-    console.log(state);
     return state.session.user;
   });
-
-  // useSelector((state) =>
-  //   state.spot.find((ele) => {
-  //     return ele.id == spotId;
-  //   })
-  // ),
-
-  // inefficient - should be using a single resource route
 
   return (
     <div className="spots">
@@ -43,22 +33,6 @@ const Spots = () => {
           </div>
         )}
       </div>
-      {/* until userspots exists, dont render */}
-      {/* {userSpots && (
-        <div>
-          <h3>{userSpots[spotId].name}</h3>
-        </div>
-      )} */}
-      {/* {userSpots &&
-        userSpots.map((spot) => (
-          <Link to={`/spots/${spot.id}`}>
-            <div className="spot-container" key={spot.id}>
-              <h2>{spot.name}</h2>
-              <p>{spot.description}</p>
-              <img className="spot-image" src={spot.imageLink} />
-            </div>
-          </Link>
-        ))} */}
     </div>
   );
 };

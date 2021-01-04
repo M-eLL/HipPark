@@ -11,8 +11,6 @@ const BookingForm = () => {
   const user = useSelector((state) => state.session.user);
   const { spotId } = useParams();
 
-  const userBookings = useSelector((state) => state.bookings);
-  const userSpots = useSelector((state) => state.spots.userSpots);
   const loggedInUser = useSelector((state) => state.session.user);
   const [name, setName] = useState("");
 
@@ -44,34 +42,22 @@ const BookingForm = () => {
       {loggedInUser && (
         <>
           <div>
-            {/* {!userBookings && ( */}
-            <>
-              <h3>book spot?</h3>
-              <button onClick={addBookingHandler}>add booking</button>
-            </>
-            {/* )} */}
+            <div id="leave-note">
+              <label>
+                Leave a note
+                <input value={name} onChange={(e) => setName(e.target.value)} />
+                <button onClick={editBookingHandler}>✔</button>
+              </label>
+            </div>
           </div>
-          {/* {userBookings && ( */}
+
           <div>
-            <div>
-              <div>
-                <h3>edit booking</h3>
-                <label>
-                  name
-                  <input
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                </label>
-                <button onClick={editBookingHandler}>nickname booking</button>
-              </div>
-            </div>
-            <div>
-              <h3>delete booking</h3>
-              <button onClick={deleteHandler}>delete</button>
-            </div>
+              <button onClick={addBookingHandler}>add booking</button>
           </div>
-          {/* )} */}
+
+          <div>
+            <button onClick={deleteHandler}>delete</button>
+          </div>
         </>
       )}
     </div>

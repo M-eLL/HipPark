@@ -31,7 +31,6 @@ const Booking = () => {
                   {booking.Spot && (
                     <div>
                       <h3>{booking.Spot.name}</h3>
-                      {booking.nickname && <h3>{booking.nickname}</h3>}
                       <h3>
                         - {booking.Spot.Location.city},{" "}
                         {booking.Spot.Location.state}
@@ -40,6 +39,9 @@ const Booking = () => {
                         className="spot-image"
                         src={booking.Spot.imageLink}
                       />
+                      <div className="nickname">
+                        {booking.nickname && <p>{booking.nickname}</p>}
+                      </div>
                     </div>
                   )}
                 </Link>

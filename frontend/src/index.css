@@ -2,28 +2,30 @@
 * {
   box-sizing: border-box;
   text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 html,
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-/* 
-li a {
-  margin: 0 20px;
-  padding: 5px;
-  color: black;
-  background-color: white;
-  border-radius: 10px;
-  border: .5px solid gray;
-  text-decoration: none;
-  font-weight: bold;
+
+#homepage-header {
+  font-size: 58px;
+  line-height: 70px;
+  letter-spacing: 0px;
+  font-weight: 700;
+  text-align: center;
 }
 
-li a.active {
-  color: white;
-  background-color: black;
-} */
+#sub-header {
+  margin: 0px;
+  padding-bottom: 80px;
+  border: 0px;
+  font: inherit;
+  vertical-align: top;
+}
+
 #logo {
   height: 50px;
   width: 50px;
@@ -34,9 +36,12 @@ li a.active {
   display: flex;
   align-items: center;
 }
+.nickname {
+  color: red;
+  text-align: center;
+}
 .spots {
-  display: flex;
-  flex-flow: wrap;
+  display: inline;
 }
 .spot-container {
   background: whitesmoke;

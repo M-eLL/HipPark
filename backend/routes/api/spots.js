@@ -17,7 +17,9 @@ router.get(
   "/",
   restoreUser,
   asyncHandler(async (req, res) => {
-    let spots = await Spot.findAll();
+    let spots = await Spot.findAll({
+      include: [Location],
+    });
     res.json({ spots });
   })
 );
@@ -35,4 +37,12 @@ router.get(
   })
 );
 
+// router.put(
+//   "/spots/:spotId",
+//   requireAuth,
+//   asyncHandler(async (req, res) => {
+//     const newBookedSpot = await Spot.update();
+//     res.json({ newBookedSpot });
+//   })
+// );
 module.exports = router;

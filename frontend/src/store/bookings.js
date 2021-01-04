@@ -53,10 +53,10 @@ export const addBookings = (spotId, userId) => async (dispatch) => {
   dispatch(addBooking(response.data));
 };
 
-export const editBookings = (spotId, userId) => async (dispatch) => {
-  let response = await fetch(`/api/bookings/${spotId}`, {
+export const editBookings = (spotId, userId, nickname) => async (dispatch) => {
+  let response = await fetch(`/api/bookings/spots/${spotId}`, {
     method: "PUT",
-    body: JSON.stringify({ userId }),
+    body: JSON.stringify({ userId, nickname }),
   });
 
   dispatch(editBooking(response.data));
@@ -79,10 +79,18 @@ function reducer(state = initialState, action) {
       newState = [...state, action.payload];
       return newState;
     }
-    // case EDIT_BOOKING: {
-    //   newState = [...state, action.payload];
-    //   return newState;
-    // }
+    case EDIT_BOOKING: {
+      newState = [...state];
+      let currentIndex;
+      newState.forEach((booking, index) => {
+        if (booking.id === action.payload.id) {
+          currentIndex = index;
+        }
+      });
+      newState[currentIndex] = action.payload;
+
+      return newState;
+    }
     default:
       return state;
   }

@@ -24,11 +24,18 @@ const Spots = () => {
           <div>
             <h1>More information about {userSpots[spotId].name}:</h1>
             {userSpots && (
-              <div>
-                <img className="spot-image" src={userSpots[spotId].imageLink} />
-                <p>${userSpots[spotId].price}/day</p>
-                <p>{userSpots[spotId].description}</p>
-              </div>
+              <>
+                <div>
+                  <p>{userSpots[spotId].description}</p>
+                </div>
+                <div class="spot-container">
+                  <img
+                    className="spot-image"
+                    src={userSpots[spotId].imageLink}
+                  />
+                  <h3>${userSpots[spotId].price}/day</h3>
+                </div>
+              </>
             )}
           </div>
         )}

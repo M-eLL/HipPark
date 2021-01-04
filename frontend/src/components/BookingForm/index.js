@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { oneSpot } from "../../store/spots";
 import { bookings, deleteBookings, addBookings } from "../../store/bookings";
-// import { addBookings } from "../../store/bookings";
 import { editBookings } from "../../store/bookings";
 
 const BookingForm = () => {
@@ -12,7 +11,10 @@ const BookingForm = () => {
   const user = useSelector((state) => state.session.user);
   const { spotId } = useParams();
 
+  const userBookings = useSelector((state) => state.bookings);
+  const userSpots = useSelector((state) => state.spots.userSpots);
   const loggedInUser = useSelector((state) => state.session.user);
+  const [name, setName] = useState("");
 
   const deleteHandler = () => {
     console.log(spotId);
@@ -28,7 +30,7 @@ const BookingForm = () => {
 
   const editBookingHandler = () => {
     console.log(spotId);
-    dispatch(editBookings(spotId, user.id));
+    dispatch(editBookings(spotId, loggedInUser.id, name));
     history.push("/bookings");
   };
 
@@ -36,8 +38,6 @@ const BookingForm = () => {
     dispatch(oneSpot());
     dispatch(bookings(1));
   }, [dispatch]);
-  const userBookings = useSelector((state) => state.bookings);
-  const [opening, setOpening] = useState("");
 
   return (
     <div className="booking-form">
@@ -56,25 +56,18 @@ const BookingForm = () => {
             <div>
               <div>
                 <h3>edit booking</h3>
-                <select
-                  name="opening"
-                  onChange={(e) => {
-                    setOpening(e.target.value);
-                  }}
-                  value={opening}
-                >
-                  <option value="" disabled>
-                    choose a date
-                  </option>
-                  {userBookings.map((booking) => {
-                    return <option>{booking.Spot.name}</option>;
-                  })}
-                </select>
-                <button onClick={editBookingHandler}>switch booking</button>
+                <label>
+                  name
+                  <input
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </label>
+                <button onClick={editBookingHandler}>nickname booking</button>
               </div>
             </div>
             <div>
-              <h3>delete booking?</h3>
+              <h3>delete booking</h3>
               <button onClick={deleteHandler}>delete</button>
             </div>
           </div>

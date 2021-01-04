@@ -4,7 +4,7 @@ const { check } = require("express-validator");
 
 const { handleValidationErrors } = require("../../utils/validation");
 const { setTokenCookie, requireAuth } = require("../../utils/auth");
-const { User, Booking, Spot } = require("../../db/models");
+const { Booking } = require("../../db/models");
 
 const router = express.Router();
 
@@ -52,21 +52,17 @@ router.post(
   })
 );
 
-
 router.put(
-  "/:spotId",
+  "/spots/:spotId",
   requireAuth,
   asyncHandler(async (req, res) => {
-    const spotId = parseInt(req.params.spotId);
-    const userId = parseInt(req.body.userId);
-    const newBooking = await Booking.create({
-      userId,
-      spotId,
-      statusId: 8,
-      startDate: new Date(),
-      endDate: new Date(),
+    const spotId = req.params.spotId;
+    const { userId, nickname } = req.body;
+    const booking = await Booking.findOne({
+      where: { spotId, userId },
     });
-    res.json({ newBooking });
+    await booking.update({ nickname: nickname });
+    res.json({ booking });
   })
 );
 

@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { allSpots } from "../../store/spots";
@@ -10,7 +9,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(allSpots());
   }, []);
-//   const userSpots = useSelector((state) => state.spots);
+  //   const userSpots = useSelector((state) => state.spots);
   const userSpots = useSelector((state) => Array.from(state.spots));
   console.log("USER SPOTS:", userSpots);
 

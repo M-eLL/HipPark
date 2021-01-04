@@ -34,7 +34,10 @@ li a.active {
   display: flex;
   align-items: center;
 }
-
+.spots {
+  display: flex;
+  flex-flow: wrap;
+}
 .spot-container {
   background: whitesmoke;
   /* border: .5px solid black; */

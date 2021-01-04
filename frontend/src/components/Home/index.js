@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div className="spots">
       <div id="homepage-header">
-        <h1>Discover parking</h1>
+        <h1>Welcome to HipPark!</h1>
         <div id="sub-header">
           <p>Discover parking to suit your lifestyle</p>
         </div>

@@ -11,7 +11,7 @@ body {
 }
 
 #homepage-header {
-  font-size: 58px;
+  font-size: 48px;
   line-height: 70px;
   letter-spacing: 0px;
   font-weight: 700;
@@ -20,6 +20,7 @@ body {
 }
 
 #sub-header {
+  font-size: 18px;
   margin: 0px;
   padding-bottom: 80px;
   border: 0px;

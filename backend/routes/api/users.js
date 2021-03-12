@@ -48,7 +48,7 @@ router.post(
 
 // get user's bookings
 router.get(
-  "/:id/bookings",
+  "/:id/bookings/",
   restoreUser,
   asyncHandler(async (req, res) => {
     const user = await req.user.toJSON();
@@ -63,7 +63,7 @@ router.get(
 
 // get user's booked spots
 router.get(
-  "/:id/spots",
+  "/:id/spots/",
   restoreUser,
   asyncHandler(async (req, res) => {
     const userId = req.params.id;

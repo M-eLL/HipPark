@@ -28,7 +28,7 @@ const editBooking = (payload) => {
 };
 
 export const bookings = (userId) => async (dispatch) => {
-  let response = await fetch(`/api/users/${userId}/bookings/`);
+  let response = await fetch(`/api/users/${userId}/bookings`);
 
   dispatch(getBookings(response.data));
   return response;
@@ -36,7 +36,7 @@ export const bookings = (userId) => async (dispatch) => {
 
 export const deleteBookings = (spotId, userId) => {
   return async (dispatch) => {
-    const response = await fetch(`/api/bookings/${spotId}/${userId}/`, {
+    const response = await fetch(`/api/bookings/${spotId}/${userId}`, {
       method: "DELETE",
     });
     const id = response.data.bookingId;
@@ -45,7 +45,7 @@ export const deleteBookings = (spotId, userId) => {
 };
 
 export const addBookings = (spotId, userId) => async (dispatch) => {
-  let response = await fetch(`/api/bookings/${spotId}/`, {
+  let response = await fetch(`/api/bookings/${spotId}`, {
     method: "POST",
     body: JSON.stringify({ userId }),
   });
@@ -54,7 +54,7 @@ export const addBookings = (spotId, userId) => async (dispatch) => {
 };
 
 export const editBookings = (spotId, userId, nickname) => async (dispatch) => {
-  let response = await fetch(`/api/bookings/spots/${spotId}/`, {
+  let response = await fetch(`/api/bookings/spots/${spotId}`, {
     method: "PUT",
     body: JSON.stringify({ userId, nickname }),
   });

@@ -14,13 +14,13 @@ const getSpots = (spots) => ({
 });
 
 export const oneSpot = (spotsId) => async (dispatch) => {
-  let response = await fetch(`/api/spots/${spotsId}/`);
+  let response = await fetch(`/api/spots/${spotsId}`);
   dispatch(getOneSpot(response.data.spots));
   return response;
 };
 
 export const allSpots = () => async (dispatch) => {
-  let response = await fetch(`/api/spots/`);
+  let response = await fetch(`/api/spots`);
   dispatch(getSpots(response.data.spots));
   return response;
 };

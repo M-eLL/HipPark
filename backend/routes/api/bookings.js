@@ -9,7 +9,7 @@ const { Booking } = require("../../db/models");
 const router = express.Router();
 
 router.get(
-  "/:id",
+  "/:id/",
   asyncHandler(async (req, res) => {
     const id = req.params.id;
     const booking = await Booking.findByPk(id);
@@ -19,7 +19,7 @@ router.get(
 );
 
 router.delete(
-  "/:spotId/:userId",
+  "/:spotId/:userId/",
   asyncHandler(async (req, res) => {
     const spotId = parseInt(req.params.spotId);
     const userId = parseInt(req.params.userId);
@@ -36,7 +36,7 @@ router.delete(
 );
 
 router.post(
-  "/:spotId",
+  "/:spotId/",
   requireAuth,
   asyncHandler(async (req, res) => {
     const spotId = parseInt(req.params.spotId);
@@ -53,7 +53,7 @@ router.post(
 );
 
 router.put(
-  "/spots/:spotId",
+  "/spots/:spotId/",
   requireAuth,
   asyncHandler(async (req, res) => {
     const spotId = req.params.spotId;

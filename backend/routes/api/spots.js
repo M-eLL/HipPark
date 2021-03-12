@@ -25,7 +25,7 @@ router.get(
 );
 
 router.get(
-  "/:id",
+  "/:id/",
   restoreUser,
   asyncHandler(async (req, res) => {
     let id = await req.params.id;

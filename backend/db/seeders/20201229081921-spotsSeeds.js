@@ -44,7 +44,7 @@ module.exports = {
           userId: users[1].id,
           locationId: location[2].id,
           imageLink:
-            "https://www.we-heart.com/upload-images/smokestacksanfrancisco11.jpg",
+            "https://cdn.vox-cdn.com/thumbor/LQoG9LbSOE4VkdPwHUZHZR7YLmY=/0x0:5676x3784/1200x800/filters:focal(2384x1438:3292x2346)/cdn.vox-cdn.com/uploads/chorus_image/image/58252805/37754282806_bf9c214e16_o.0.jpg",
         },
         {
           name: "Presidio",

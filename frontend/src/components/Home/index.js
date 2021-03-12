@@ -24,7 +24,11 @@ const Home = () => {
       </div>
       <div>
         {userSpots.map((spot) => (
-          <Link class="spot-container" key={spot.id} to={`/spots/${spot.id}`}>
+          <Link
+            className="spot-container"
+            key={spot.id}
+            to={`/spots/${spot.id}`}
+          >
             <h3>{spot.name}</h3>
             <img className="spot-image" src={spot.imageLink} />
           </Link>

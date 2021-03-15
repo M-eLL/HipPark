@@ -14,5 +14,27 @@ Hip Park is a clone of Hipcamp that allows a user to discover and book convenien
 <a href="#"><img alt="git" src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" /></a>
 <a href="https://www.npmjs.com/"><img alt="npm" src="https://img.shields.io/badge/-NPM-CB3837?style=flat-square&logo=npm&logoColor=white" /></a>
 
+## Installation
+* Clone the GitHub repository.
+* Run npm install in the base directory.
+* Use  PostgreSQL to create a database user with a password
+* cd into the backend directory.
+* Create a .env file with: DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_HOST, JWT_SECRET, JWT_EXPIRES_IN
+* Run npx dotenv sequelize-cli db:create.
+* Run npx dotenv sequelize-cli db:migrate.
+* Run npx dotenv sequelize-cli db:seed:all.
+* Run npm start in both frontend and backend folders to start the server
+
+## Key Features
+
+Spots
+* Parking spot information such as price, location, description
+
+Bookings
+* Book parking spots
+* Add notes to booked spots
+* Update notes
+* Delete booked spots
+
 ## Live Link
 https://hippark.herokuapp.com/

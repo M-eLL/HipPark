@@ -1,3 +1,6 @@
+<img width="360" alt="Screen Shot 2021-03-15 at 12 25 22 PM" src="https://user-images.githubusercontent.com/68613271/111188817-d5de5c00-858b-11eb-96e0-c446ea4291fa.png">
+
+
 # Hip Park
 Hip Park is a clone of Hipcamp that allows a user to discover and book convenient parking spots that suit their lifestyle.
 

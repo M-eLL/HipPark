@@ -1,4 +1,6 @@
+<p align="center">
 <img width="360" alt="Screen Shot 2021-03-15 at 12 25 22 PM" src="https://user-images.githubusercontent.com/68613271/111188817-d5de5c00-858b-11eb-96e0-c446ea4291fa.png">
+</p>
 
 
 # Hip Park

@@ -39,6 +39,7 @@ const Booking = () => {
                         className="spot-image"
                         src={booking.Spot.imageLink}
                       />
+                      {booking.startDate} - {booking.endDate}
                       <div className="nickname">
                         {booking.nickname && <p>{booking.nickname}</p>}
                       </div>
